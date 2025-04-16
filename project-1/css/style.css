@@ -547,6 +547,16 @@ article#about section.container ul li, aside#styles div.container ul li span a, 
     aside#styles {
         width: 90%;
     }
+    aside#styles div.container ul {
+        display: flex;
+        flex-direction: column;
+    }
+    aside#styles div.container ul li {
+        width: 75%;
+    }
+    aside#styles div.container ul li span {
+        width: 100%;
+    }
     /*footer*/
     footer.page-footer div.container {
         padding: 10px;
