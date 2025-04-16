@@ -1,0 +1,572 @@
+/*import fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Gothic+Expanded+One&display=swap');
+
+html {
+    background-color: #F2E4D5;
+}
+
+
+/*typographic styles*/
+#about section.container h2, #guidelines section.container h2,  #contribute section.container h2 {
+    line-height: 1.7;
+    letter-spacing: 1px;
+    font-size: 30px;
+    text-align: center;
+}
+#guidelines section.container h3, #contribute section.container h3, #files div.container h3 {
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-align: center;
+}
+header div.container p, #about section.container p, #guidelines section.container p, #contribute section.container p, #contribute section.container ol li, .page-footer div.container p {
+    max-width: 80ch;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    margin: 20px auto;
+
+}
+h1, h2, h3 ,h4 {
+     font-family: "Special Gothic Expanded One", "sans-serif";
+}
+h1 {
+    font-size: 155px;
+}
+h2 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 18px;
+}
+a, p, li, span {
+     font-family: 'Playfair Display', serif;
+     font-size: 20px;
+}
+/*colors
+Brown Sugar – #AF9A7D
+Eggshell Brown – #EAE5D2
+#F2E4D5 – Soft Sand Beige
+#D9B38C – Warm Light Brown
+#5A8D9E – Cool Ocean Blue
+#7FB3C6 - Coastal Aqua
+#A6D0D9 – Gentle Seafoam Green
+*/
+/*body, grid*/
+body {
+    display: grid;
+    grid-template-areas:
+    "skip skip"
+    "header header"
+    "nav nav"
+    "main main"
+    "aside1 aside2"
+    "footer footer";
+    grid-template-columns: 50% 50%;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+/*top button skip styling*/
+.skip-link {
+    grid-area: skip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(175, 154, 125, 0.4);
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    margin: 10px auto;
+    transition: 0.2s;
+}
+/*hover and click effect*/
+.skip-link:hover {
+    transform: scale(1.10);
+}
+.skip-link:active {
+    transform: scale(0.95);
+}
+/*header styling*/
+/*background-image, ocean ripples https://www.pinterest.com/pin/790592909561321676/ */
+header {
+    grid-area: header;
+    /*sizing and coloring*/
+    background-image: url("../img/ocean-ripples.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    width: auto;
+    /*centering*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+header > div.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(175, 154, 125, 0);
+    border-radius: 35px;
+    padding: 15px;
+}
+
+header > div.container > h1 {
+    font-size: 155px;
+    color: #D9B38C;
+    margin: 20px auto 10px auto;
+}
+header > div.container  h2 {
+    font-size: 35px;
+    text-align: center;
+}
+header > div.container p a {
+    color: black;
+    text-decoration: underline;
+}
+header > div.container p, header > div.container p a {
+    font-size: 25px;
+}
+header .link-github {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F2E4D5;
+    width: 225px;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+/*hover and click effect*/
+header .link-github:hover {
+    transform: scale(1.10);
+}
+header .link-github:active {
+    transform: scale(0.95);
+}
+svg {
+    height: 15px;
+    width: auto;
+}
+/*nav styling and sizing*/
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 0;
+    width: 75%;
+}
+nav ul li {
+    list-style: none;
+    background-color: rgba(175, 154, 125, 0.4);
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.2s;
+}
+nav ul li a {
+    transition: 0.2s;
+}
+/*nav hover and clicking effects*/
+nav ul li a:hover, nav ul li:hover {
+    transform: scale(1.10);
+    transition: 0.2s;
+}
+nav ul li a:active, nav ul li:active {
+    transform: scale(0.95);
+}
+/*main styling, sizing and grid-area / grid*/
+main {
+    grid-area: main;
+    width: 95%;
+    margin: 0 auto;
+}
+main > div.container {
+    display: grid;
+    grid-template-areas:
+    "about"
+    "guidelines"
+    "contribute";
+}
+/*grid-area, styling and sizing the articles in the main div container*/
+article#about {
+    grid-area: about;
+    /*sizing*/
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+article#about section.container {
+    background-color: #7FB3C6;
+    /*sizing*/
+    width: 75%;
+    height: auto;
+    /*centering*/
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+article#about section.container:last-of-type {
+    margin-bottom: 0;
+}
+article#about section.container:last-of-type ul {
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+article#about section.container:last-of-type li {
+    list-style: none;
+    background-color: #A6D0D9;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.2s;
+    text-transform: capitalize;
+}
+/*hover effects*/
+article#about section.container:last-of-type li:hover {
+    transform: scale(1.10);
+    font-weight: bold;
+    color: #365F6E;
+}
+/*guidelines article grid-area, styling, and sizing*/
+article#guidelines {
+    grid-area: guidelines;
+    /*sizing*/
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+article#guidelines section.container {
+    background-color: #5A8D9E;
+    /*sizing*/
+    width: 75%;
+    border-radius: 20px;
+    padding: 20px;
+    /*centering*/
+    margin: 0 auto;
+}
+article#guidelines section.container:last-of-type {
+    margin-bottom: 0;
+}
+article#contribute {
+    grid-area: contribute;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+article#contribute section.container {
+    background-color: #BCAA93;
+    /*sizing*/
+    width: 75%;
+    height: auto;
+    /*centering*/
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+article#contribute section.container:first-of-type {
+    margin-top: 0;
+}
+article#contribute footer#files {
+    background-color: rgba(175, 154, 125, 0.4);
+    /*sizing*/
+    width: 75%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    /*centering*/
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article#contribute footer#files div.container h3 {
+    /*sizing and centering*/
+    max-width: fit-content;
+    margin: 0 auto 20px auto;
+}
+article#contribute footer#files div.container a {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #BCAA93;
+}
+aside.profile {
+    grid-area: aside1;
+    background-color: #AF9A7D;
+    width: 75%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+aside.profile div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+aside.profile div.container ul {
+    padding-left: 0;
+}
+aside.profile div.container ul li {
+    list-style: none;
+}
+h4#profile-title {
+    margin-bottom: 0;
+}
+aside.profile div.container > a {
+    background-color: #BCAA93;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+aside#styles {
+    grid-area: aside2;
+    background-color: #AF9A7D;
+    width: 85%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+aside#styles div.container {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+}
+/*sizing h2*/
+aside#styles div.container h2 {
+    max-width: fit-content;
+    margin: 20px auto;
+}
+aside#styles div.container ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+aside#styles div.container ul li {
+    list-style: none;
+    transition: 0.2s;
+    margin: auto 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+aside#styles div.container ul li span {
+    display: flex;
+    flex-direction: column;
+}
+aside#styles div.container ul li span a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.2s;
+    background-image: url("../img/ocean-ripples.jpg");
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+aside#styles div.container ul li span a:hover, .link-allstyles:hover, aside.profile div.container > a:hover {
+    transform: scale(1.05);
+}
+/*view all styles button*/
+.link-allstyles {
+    /*centering and aligning*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    background-color: #BCAA93;
+    /*sizing*/
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    transition: 0.2s;
+}
+
+/*grid-area for footer and sizing*/
+footer.page-footer {
+    grid-area: footer;
+    background-color: #ead3aa;
+    height: auto;
+    width: 100%;
+}
+/*styling the footer div container*/
+footer.page-footer > div.container {
+    /*centering contents*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer.page-footer > div.container ul {
+    /*removing padding, sizing and centering the list*/
+    height: auto;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+footer.page-footer > div.container ul li {
+    /*removing list style*/
+    list-style: none;
+}
+
+/*box shadows*/
+nav ul li {
+    box-shadow: 0 4px 20px black;
+}
+article#about section.container,article#guidelines section.container, article#contribute section.container, article#contribute footer#files, aside.profile, aside#styles {
+    box-shadow: 0 4px 20px black;
+}
+article#about section.container ul li, aside#styles div.container ul li span a, .link-allstyles, aside.profile div.container > a {
+    box-shadow: 2px 4px 8px black;
+}
+
+/*media query for mobile*/
+@media (370px <= width <= 890px) {
+    /*adjusting the grid*/
+    body {
+        display: grid;
+        grid-template-areas:
+        "skip skip"
+        "header header"
+        "nav nav"
+        "main main"
+        "aside1 aside1"
+        "aside2 aside2"
+        "footer footer";
+        grid-template-columns: 50% 50%;
+        margin: 0;
+    }
+    /*mainly resizing and adding / removing padding for most elements*/
+    header {
+        width: 100vw;
+    }
+    header div.container h1 {
+         font-size: 95px;
+         text-align: center;
+     }
+    header div.container {
+        padding: 15px 0 15px 0;
+        width: 100%;
+    }
+    nav ul {
+         display: flex;
+         flex-direction: column;
+     }
+    nav ul li {
+        margin: 5px;
+    }
+    main {
+        width: 100vw;
+    }
+    /*adding flex to center the items in the main div container*/
+    main > div.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /*about article*/
+    article#about {
+        width: 100%;
+        padding: 10px 0 10px 0;
+    }
+    article#about section.container {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+    article#about section.container:first-of-type {
+        margin-top: 0;
+    }
+    /*guidelines article*/
+    article#guidelines {
+        width: 100%;
+        padding: 10px 0 10px 0;
+    }
+    article#guidelines section.container {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+    /*contribute article*/
+    article#contribute {
+        width: 100%;
+        padding: 10px 0 10px 0;
+    }
+    article#contribute section.container {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+    article#contribute footer#files {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+    article#contribute footer#files div.container a {
+        width: 75%;
+        margin: 15px auto;
+    }
+    article#contribute footer#files {
+         width: 100%;
+         margin: 20px auto 0 auto;
+    }
+    article#contribute footer#files div.container {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    article#contribute footer#files div.container a {
+        text-align: center;
+    }
+    aside.profile {
+        width: 90%;
+    }
+    aside#styles {
+        width: 90%;
+    }
+    /*footer*/
+    footer.page-footer div.container {
+        padding: 10px;
+    }
+    /*center all the text and typographic styles*/
+    #about section.container h2, #guidelines section.container h2, #guidelines section.container h3, #contribute section.container h2, #contribute section.container h3, #files div.container h3 {
+        text-align: center;
+    }
+    header div.container p, #about section.container p, #guidelines section.container p, #contribute section.container p, #contribute section.container ol li, .page-footer div.container p {
+        text-align: center;
+        max-width: 30ch;
+        margin: 20px auto;
+        line-height: 1.5;
+        letter-spacing: 0.4px;
+    }
+    .link-guidelines {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
